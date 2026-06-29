@@ -63,7 +63,7 @@ html {
 @layer components {
   /* ---------- Buttons ---------- */
   .btn-primary {
-    @apply bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg font-medium text-center transition shadow-lg hover:shadow-primary/30;
+    @apply bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg active:bg-primary font-medium text-center transition shadow-lg hover:shadow-primary/30;
   }
 
   .btn-outline {

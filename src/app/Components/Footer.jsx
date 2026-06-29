@@ -162,7 +162,7 @@ export default function Footer() {
         {/* bottom bar */}
         <div className="footer-bottom-bar">
           <p className="footer-bottom-text">
-            © 2025 AI Revolution. All rights reserved.
+            © 2026 AI Revolution. All rights reserved.
           </p>
           <div className="footer-bottom-link-group">
             <a href="#" className="footer-bottom-link">

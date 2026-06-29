@@ -48,7 +48,7 @@ export default function HeroSection() {
 
             <p className="text-sm font-medium text-gray-600">
               Trusted by
-              <span className="text-primary font-bold">+10000</span> people
+              <span className="text-primary font-bold">+1000</span> people
             </p>
           </div>
         </div>

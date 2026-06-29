@@ -1,7 +1,14 @@
+"use client";
+
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { contactSchema } from "../lib/Validation";
+import { toast } from "sonner";
+
 const contactDetails = [
   {
     title: "Phone",
-    text: "+1 (555) 123-4567",
+    text: "+213 592382904",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +28,7 @@ const contactDetails = [
   },
   {
     title: "Email",
-    text: "contact@airevolution.com",
+    text: "airevolutionalgeria@gmail.com",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +48,7 @@ const contactDetails = [
   },
   {
     title: "Office",
-    text: "123 AI Boulevard, Tech City, TC 10001",
+    text: "45 Didouche Mourad, Alger Center, 16000",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -68,6 +75,19 @@ const contactDetails = [
 ];
 
 export default function Contact() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(contactSchema),
+  });
+
+  const onSubmit = (data) => {
+    console.log(data);
+
+    toast.success("Message Sent successfully!");
+  };
   return (
     <section className="app-container py-16" id="contact">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -99,23 +119,49 @@ export default function Contact() {
 
         {/* contact form */}
         <div className="bg-white rounded-xl shadow-lg p-6 lg:p-8">
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <div className="space-y-6">
               <div>
-                <label className="form-input-label">Full Name</label>
-                <input type="text" className="form-input" />
+                <label className="form-input-label">Full Name*</label>
+                <input
+                  type="text"
+                  className="form-input"
+                  {...register("fullname")}
+                />
+                <p className="text-red-600 text-sm">
+                  {errors.fullname?.message}
+                </p>
               </div>
               <div>
-                <label className="form-input-label">Email Adress</label>
-                <input type="email" className="form-input" />
+                <label className="form-input-label">Email Adress*</label>
+                <input
+                  type="email"
+                  className="form-input"
+                  {...register("email")}
+                />
+                <p className="text-red-600 text-sm">{errors.email?.message}</p>
               </div>
               <div>
-                <label className="form-input-label">Subject</label>
-                <input type="text" className="form-input" />
+                <label className="form-input-label">Subject*</label>
+                <input
+                  type="text"
+                  className="form-input"
+                  {...register("subject")}
+                />
+                <p className="text-red-600 text-sm">
+                  {errors.subject?.message}
+                </p>
               </div>
               <div>
-                <label className="form-input-label">Message</label>
-                <textarea className="form-input" rows="4" />
+                <label className="form-input-label">Message*</label>
+                <textarea
+                  className="form-input"
+                  rows="4"
+                  {...register("message")}
+                />
+                <p className="text-red-600 text-sm">
+                  {errors.message?.message}
+                </p>
               </div>
             </div>
             <button className="btn-primary w-full mt-6">Send Message</button>
