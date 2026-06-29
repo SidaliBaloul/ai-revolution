@@ -26,10 +26,10 @@ export default function HeroSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row  gap-4 pt-4">
-            <a className="btn-primary" href="#">
+            <a className="btn-primary" href="/Solutions">
               Explore AI Solutions
             </a>
-            <a className="btn-outline" href="#">
+            <a className="btn-outline" href="/LearnMore">
               Learn More
             </a>
           </div>
