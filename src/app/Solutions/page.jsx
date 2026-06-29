@@ -76,7 +76,7 @@ export default function Solutions() {
   ];
 
   return (
-    <main className="min-h-screen bg-white">
+    <section className="app-container min-h-screen ">
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-8 py-20">
         <h1 className="text-6xl font-bold">
@@ -113,6 +113,6 @@ export default function Solutions() {
           </div>
         ))}
       </section>
-    </main>
+    </section>
   );
 }

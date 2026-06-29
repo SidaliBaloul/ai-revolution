@@ -2,12 +2,12 @@ import "../globals.css";
 
 export default function LearnMore() {
   return (
-    <main className="bg-white min-h-screen">
+    <section className="app-container  min-h-screen">
       {/* Hero */}
 
-      <section className="max-w-7xl mx-auto px-8 py-20 grid lg:grid-cols-2 gap-y-20 gap-x-60  items-center">
+      <section className=" max-w-7xl mx-auto px-8 py-20 grid lg:grid-cols-2 gap-y-20 gap-x-60  items-center">
         <div>
-          <h1 className="text-6xl font-bold leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
             Artificial Intelligence is
             <span className=" block gradient-text">Changing Everything</span>
           </h1>
@@ -37,7 +37,7 @@ export default function LearnMore() {
 
       {/* Statistics */}
 
-      <section className="bg-violet-50 py-20">
+      <section className=" py-20">
         <div className="max-w-7xl mx-auto px-8 grid md:grid-cols-4 gap-8 text-center">
           <div>
             <h2 className="text-5xl font-bold text-secondary">95%</h2>
@@ -94,6 +94,6 @@ export default function LearnMore() {
           </div>
         </div>
       </section>
-    </main>
+    </section>
   );
 }
